@@ -1,0 +1,10 @@
+INSERT INTO service (nom, id_site) 
+SELECT 'Comptabilité', id FROM site;
+INSERT INTO service (nom, id_site) 
+SELECT 'Production', id FROM site;
+INSERT INTO service (nom, id_site) 
+SELECT 'Accueil', id FROM site;
+INSERT INTO service (nom, id_site) 
+SELECT 'Informatique', id FROM site;
+INSERT INTO service (nom, id_site) 
+SELECT 'Commercial', id FROM site;
