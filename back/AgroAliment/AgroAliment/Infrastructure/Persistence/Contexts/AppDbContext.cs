@@ -12,7 +12,7 @@ public partial class AppDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Service> Service { get; set; }
+    public virtual DbSet<Domain.Models.Service> Service { get; set; }
 
     public virtual DbSet<Site> Site { get; set; }
 
@@ -20,7 +20,7 @@ public partial class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Service>(entity =>
+        modelBuilder.Entity<Domain.Models.Service>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("service_pkey");
 
