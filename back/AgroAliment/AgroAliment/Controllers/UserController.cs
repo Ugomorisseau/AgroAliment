@@ -1,38 +1,32 @@
 ﻿using AgroAliment.Domain.Models;
-using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
-using AgroAliment.Service;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 
 namespace AgroAliment.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-
 public class UserController : ControllerBase
 {
     private readonly AppDbContext _context;
     private readonly IUserService _userService;
+    private readonly IAuthService _authService;
+    private readonly IConfiguration _config;
 
-    public UserController(AppDbContext context, IUserService userService)
+    public UserController(AppDbContext context, IUserService userService, IAuthService authService,
+        IConfiguration config)
     {
         _context = context;
         _userService = userService;
+        _authService = authService;
+        _config = config;
     }
 
-
-    
-
-    // public Users GetById(string id)
-    // {
-    // }
-    
-    [HttpGet("GetUsers")]
-    public async Task<ActionResult<List<Users>>> GetUsers()
-    {
-        return await _userService.GetUsers();
-    }
-
+    // [HttpGet("GetUsers")]
+    // public async Task<ActionResult<List<Users>>> GetUsers() => await _userService.GetUsers();
+    //
+    // [HttpPost("LoginWeb")]
+    // // public async Task<IActionResult> LoginWeb([FromBody] UserLogin userLogin)
+    // // {
+    // // }
 }

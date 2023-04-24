@@ -5,8 +5,8 @@ export interface User {
   nom?: string;
   prenom?: string;
   email?: string;
-  phone?: number;
-  phoneFix?: number;
+  phone?: string;
+  phonefix?: string;
   isAdmin?: boolean;
   password?: string;
   serviceId?: number;

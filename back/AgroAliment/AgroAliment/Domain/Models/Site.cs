@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace AgroAliment.Domain.Models;
-
-[Table("site")]
-public partial class Site
+namespace AgroAliment.Domain.Models
 {
-    [Key]
-    [Column("id")]
-    public int Id { get; set; }
-
-    [Column("ville")]
-    [StringLength(100)]
-    public string Ville { get; set; } = null!;
-
-    [InverseProperty("Site")]
-    public virtual ICollection<Service> Service { get; set; } = new List<Service>();
+    // Classe représentant un site
+    public class Site
+    {
+        [Key]
+        public int Id { get; set; } 
+        public string Ville { get; set; } 
+        public ICollection<Users>? Users { get; set; }
+    }
 }

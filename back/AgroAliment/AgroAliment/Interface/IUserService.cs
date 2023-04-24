@@ -4,5 +4,5 @@ namespace AgroAliment.Interface;
 
 public interface IUserService
 {
-    Task<List<Users>> GetUsers();
+    // Task<List<Users>> GetUsers();
 }
