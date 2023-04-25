@@ -2,6 +2,7 @@ using System.ComponentModel;
 using AgroAliment.Domain.Models;
 using AgroAliment.Interface;
 using AgroAliment.Service;
+using Api;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,7 +33,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISiteService, SiteService>();
 builder.Services.AddScoped<IServiceService, ServiceService>();
-// builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 

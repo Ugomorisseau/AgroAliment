@@ -22,4 +22,10 @@ namespace AgroAliment.Domain.Models
         public Site? Site { get; set; } 
         public Role? Role { get; set; } 
     }
+
+    public class LoginModel
+    {
+        public string Email { get; set; } 
+        public string Password { get; set; } 
+    }
 }

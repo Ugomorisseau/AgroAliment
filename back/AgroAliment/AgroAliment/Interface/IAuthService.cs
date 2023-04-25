@@ -5,6 +5,6 @@ namespace AgroAliment.Interface;
 
 public interface IAuthService
 {
-    Task<Users> Auth(string email, string password);
+    Task<Users> Login(string email, string password);
     string GenerateToken(string secure, List<Claim> claims);
 }
