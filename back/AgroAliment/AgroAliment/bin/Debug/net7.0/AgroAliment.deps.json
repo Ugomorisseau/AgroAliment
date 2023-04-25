@@ -9,7 +9,7 @@
       "AgroAliment/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Core": "1.6.0",
-          "FakerDotNet": "1.0.7",
+          "Bogus": "34.0.2",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.5",
           "Microsoft.AspNetCore.OpenApi": "7.0.2",
           "Microsoft.EntityFrameworkCore.Design": "7.0.5",
@@ -32,11 +32,11 @@
           }
         }
       },
-      "FakerDotNet/1.0.7": {
+      "Bogus/34.0.2": {
         "runtime": {
-          "lib/netstandard2.0/FakerDotNet.dll": {
-            "assemblyVersion": "1.0.7.0",
-            "fileVersion": "1.0.7.0"
+          "lib/net6.0/Bogus.dll": {
+            "assemblyVersion": "34.0.2.0",
+            "fileVersion": "34.0.2.0"
           }
         }
       },
@@ -389,12 +389,12 @@
       "path": "bcrypt.net-core/1.6.0",
       "hashPath": "bcrypt.net-core.1.6.0.nupkg.sha512"
     },
-    "FakerDotNet/1.0.7": {
+    "Bogus/34.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IQsI/Pg9DrMPPVS9Ih+TwrHD6O8+JE873XWd2JoDthiyhuqfMbAUp6CqKNlBo0cUsZP+KzyZ3yE+0uJZjY0+gw==",
-      "path": "fakerdotnet/1.0.7",
-      "hashPath": "fakerdotnet.1.0.7.nupkg.sha512"
+      "sha512": "sha512-2KQAuMn3fLAQ2r6jeiffZnpv0bi3GCW3iRB2v1KeHIEBu8MNTh9dBlLTZwGvM0pr+9doKkU8L5JgCURmTmT88A==",
+      "path": "bogus/34.0.2",
+      "hashPath": "bogus.34.0.2.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

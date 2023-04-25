@@ -2,7 +2,7 @@
 
 namespace AgroAliment.Interface;
 
-public interface IUserService
+public interface ISiteService
 {
-    Task<List<Users>> GetAllUsers();
+    Task<List<Site>> GetAllSite();
 }

@@ -15,13 +15,17 @@
           }
         }
       },
-      "FakerDotNet/1.0.7": {
+      "Bogus/34.0.2": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/FakerDotNet.dll": {}
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/FakerDotNet.dll": {}
+          "lib/net6.0/Bogus.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -762,16 +766,23 @@
         "lib/netstandard2.0/BCrypt.Net-Core.pdb"
       ]
     },
-    "FakerDotNet/1.0.7": {
-      "sha512": "IQsI/Pg9DrMPPVS9Ih+TwrHD6O8+JE873XWd2JoDthiyhuqfMbAUp6CqKNlBo0cUsZP+KzyZ3yE+0uJZjY0+gw==",
+    "Bogus/34.0.2": {
+      "sha512": "2KQAuMn3fLAQ2r6jeiffZnpv0bi3GCW3iRB2v1KeHIEBu8MNTh9dBlLTZwGvM0pr+9doKkU8L5JgCURmTmT88A==",
       "type": "package",
-      "path": "fakerdotnet/1.0.7",
+      "path": "bogus/34.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fakerdotnet.1.0.7.nupkg.sha512",
-        "fakerdotnet.nuspec",
-        "lib/netstandard2.0/FakerDotNet.dll"
+        "bogus.34.0.2.nupkg.sha512",
+        "bogus.nuspec",
+        "lib/net40/Bogus.dll",
+        "lib/net40/Bogus.xml",
+        "lib/net6.0/Bogus.dll",
+        "lib/net6.0/Bogus.xml",
+        "lib/netstandard1.3/Bogus.dll",
+        "lib/netstandard1.3/Bogus.xml",
+        "lib/netstandard2.0/Bogus.dll",
+        "lib/netstandard2.0/Bogus.xml"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -2327,7 +2338,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "BCrypt.Net-Core >= 1.6.0",
-      "FakerDotNet >= 1.0.7",
+      "Bogus >= 34.0.2",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.5",
       "Microsoft.AspNetCore.OpenApi >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
@@ -2382,9 +2393,9 @@
             "target": "Package",
             "version": "[1.6.0, )"
           },
-          "FakerDotNet": {
+          "Bogus": {
             "target": "Package",
-            "version": "[1.0.7, )"
+            "version": "[34.0.2, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

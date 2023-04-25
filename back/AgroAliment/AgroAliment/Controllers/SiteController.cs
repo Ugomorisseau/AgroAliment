@@ -6,26 +6,28 @@ namespace AgroAliment.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class UserController : ControllerBase
+public class SiteController : ControllerBase
 {
     private readonly AppDbContext _context;
-    private readonly IUserService _userService;
+
+    private readonly ISiteService _siteService;
+
     // private readonly IAuthService _authService;
     private readonly IConfiguration _config;
 
-    public UserController(AppDbContext context, IUserService userService,
+    public SiteController(AppDbContext context, ISiteService siteService,
         IConfiguration config)
     {
         _context = context;
-        _userService = userService;
+        _siteService = siteService;
         // _authService = authService;
         _config = config;
     }
 
-    [HttpGet("GetUsers")]
-    public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+    [HttpGet("GetSites")]
+    public async Task<ActionResult<IEnumerable<Site>>> GetSites()
     {
-        var result = await _userService.GetAllUsers();
+        var result = await _siteService.GetAllSite();
         return Ok(result);
     }
 }

@@ -50,4 +50,4 @@ C:\workspace\AgroAliment\back\AgroAliment\AgroAliment\bin\Debug\net7.0\Microsoft
 C:\workspace\AgroAliment\back\AgroAliment\AgroAliment\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\workspace\AgroAliment\back\AgroAliment\AgroAliment\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\workspace\AgroAliment\back\AgroAliment\AgroAliment\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
-C:\workspace\AgroAliment\back\AgroAliment\AgroAliment\bin\Debug\net7.0\FakerDotNet.dll
+C:\workspace\AgroAliment\back\AgroAliment\AgroAliment\bin\Debug\net7.0\Bogus.dll

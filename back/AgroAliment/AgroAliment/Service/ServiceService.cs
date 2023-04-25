@@ -4,17 +4,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AgroAliment.Service;
 
-public class UserService : IUserService
+public class ServiceService : IServiceService
 {
     private readonly AppDbContext _context;
 
-    public UserService(AppDbContext context)
+    public ServiceService(AppDbContext context)
     {
         _context = context;
     }
     
-    public async Task<List<Users>> GetAllUsers()
+    public async Task<List<Domain.Models.Service>> GetAllService()
     {
-        return await _context.Users.ToListAsync();
+        return await _context.Services.ToListAsync();
     }
+    
 }
