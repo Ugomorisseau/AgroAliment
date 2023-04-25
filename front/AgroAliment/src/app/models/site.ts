@@ -1,7 +1,8 @@
 import {Service} from "./service";
+import {User} from "./user";
 
 export interface Site {
   id?: number;
   ville?: string;
-  service?: Array<Service>;
+  users?: Array<User>;
 }

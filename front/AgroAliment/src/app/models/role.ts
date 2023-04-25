@@ -1,7 +1,6 @@
 import {User} from "./user";
-import {Site} from "./site";
 
-export interface Service{
+export interface Role {
   id?: number;
   nom?: string;
   users?: Array<User>;
