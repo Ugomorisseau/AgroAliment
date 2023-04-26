@@ -21,13 +21,13 @@ export class HomeComponent {
     // this.userService.getData().then(users => console.log(users));
 
     this.userService.getData().then((users) => (this.users = users));
-    console.log(this.users, 'test');
     this.cols = [
       {field: 'prenom', header: 'Prénom'},
       {field: 'nom', header: 'Nom'},
-      {field: 'phonefix', header: 'Téléphone Fix'},
+      {field: 'phoneFix', header: 'Téléphone Fix'},
       {field: 'phone', header: 'Téléphone Mobile'}
     ];
+    console.log(this.userService.getData().then((users) => (this.users = users)));
   }
 
   public toto(x: any) {

@@ -9,12 +9,17 @@ import {HttpClientModule} from "@angular/common/http";
 import {ButtonModule} from "primeng/button";
 import {TableModule} from "primeng/table";
 import {RippleModule} from "primeng/ripple";
+import {LoginComponent} from "./login/login.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,9 @@ import {RippleModule} from "primeng/ripple";
     HttpClientModule,
     ButtonModule,
     TableModule,
-    RippleModule
+    RippleModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
