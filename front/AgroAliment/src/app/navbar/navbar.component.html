@@ -1,5 +1,20 @@
 <label class="title">AgroAliment</label>
 
-<p-panelMenu [ngClass]="{'navbar': true}" [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
+<p-panelMenu [ngClass]="{'navbar': true}" [model]="items" [style]="{'width':'300px'}">
+</p-panelMenu>
+<div class="buttons-container">
+  <div class="buttons-container">
+    <button [routerLink]="['/login']" *ngIf="!isAuth"><i style="margin-right: 0.5em" class="pi pi-user"></i> Se
+      connecter
+    </button>
+    <button (click)="logout()" *ngIf="isAuth"><i style="margin-right: 0.5em" class="pi pi-power-off"></i> Se déconnecter
+    </button>
+  </div>
+  <button [routerLink]="['/addUser']" *ngIf="isAdmin()"><i style="margin-right: 0.5em" class="pi pi-plus"></i> Ajouter
+    un salarié
+  </button>
+</div>
+
+
 
 

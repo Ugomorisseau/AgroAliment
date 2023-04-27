@@ -74,5 +74,15 @@ export class AuthentificationService {
     console.log(this.currentUser, 'utilisateur en cours');
     return this.currentUser;
   }
+
+  public isAuthenticated() {
+    return this.currentUser != undefined;
+  }
+
+  public logout() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('LastConnectionDate');
+    window.location.href = '';
+  }
 }
 

@@ -20,6 +20,8 @@ import {InputTextModule} from "primeng/inputtext";
 import {MultiSelectModule} from "primeng/multiselect";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DropdownModule} from "primeng/dropdown";
+import { ServiceViewComponent } from './service-view/service-view.component';
+import { SiteViewComponent } from './site-view/site-view.component';
 
 
 
@@ -31,7 +33,9 @@ import {DropdownModule} from "primeng/dropdown";
     LoginComponent,
     NavbarComponent,
     UserDeleteComponent,
-    NewUserComponent
+    NewUserComponent,
+    ServiceViewComponent,
+    SiteViewComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import {DropdownModule} from "primeng/dropdown";
     InputTextModule,
     MultiSelectModule,
     BrowserAnimationsModule,
-    DropdownModule
+    DropdownModule,
+    BrowserModule,
+    PanelMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
