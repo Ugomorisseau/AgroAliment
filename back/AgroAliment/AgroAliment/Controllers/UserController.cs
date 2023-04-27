@@ -1,10 +1,18 @@
 ﻿using System.Security.Claims;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using AgroAliment.Domain.Models;
+using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgroAliment.Controllers;
+
+public class LoginData
+{
+    public string Data { get; set; }
+}
 
 [ApiController]
 [Route("api/[controller]")]
@@ -27,11 +35,25 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("GetUsers")]
-    public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+    public async Task<IActionResult> GetUsers()
     {
         var result = await _userService.GetAllUsers();
         return Ok(result);
     }
+    
+    // [HttpGet("GetUsers")]
+    // public async Task<IActionResult> GetUsers()
+    // {
+    //     var result = await _userService.ListAsync();
+    //     
+    //     // var options = new JsonSerializerOptions
+    //     // {
+    //     //     ReferenceHandler = ReferenceHandler.Preserve
+    //     // };
+    //     // var json = JsonSerializer.Serialize(result, options);
+    //     
+    //     return Ok(result);
+    // }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Users>> GetUserById(int id)
@@ -44,6 +66,19 @@ public class UserController : ControllerBase
         }
 
         return Ok(user);
+    }
+    
+    [HttpPost("WebLogin")]
+    public IActionResult LoginWeb([FromBody]LoginModel loginModel)
+    {
+        var userAuth = _authService.Auth(loginModel.Email, loginModel.Password);
+        if (userAuth != null)
+        { 
+            var userDetails = new UserViewModel(userAuth);
+                
+            return userAuth.Role == null ? Unauthorized("Invalid credentials") : Ok(userDetails);
+        }
+        return Unauthorized("Invalid credentials");
     }
 
     [HttpPost("Login")]
@@ -58,15 +93,17 @@ public class UserController : ControllerBase
                 new Claim(ClaimTypes.Role, user.Role?.Nom ?? "User")
             };
             var token = _authService.GenerateToken(_config["Jwt:Key"], claims);
-            return Ok(token);
+            var data = new LoginData();
+            data.Data = token;
+            return Ok(data);
         }
 
         return Unauthorized();
     }
 
 
-    [HttpPost]
-    [Authorize(Roles = "Administrateur")]
+    [HttpPost("AddUser")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<Users>> AddUser([FromBody] Users user)
     {
         if (user == null)
@@ -80,7 +117,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Authorize(Roles = "Administrateur")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> ModifyUser(int id, [FromBody] Users user)
     {
         if (user == null || id != user.Id)
@@ -101,7 +138,7 @@ public class UserController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles = "Administrateur")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteUser(int id)
     {
         var user = await _userService.GetUserById(id);
@@ -128,5 +165,12 @@ public class UserController : ControllerBase
     {
         var user = await _userService.GetUserByName(name);
         return Ok(user);
+    }
+
+    [HttpGet("search/{search}")]
+    public async Task<IActionResult> FindName(string search)
+    {
+        var result = await _userService.FindName(search);
+        return Ok(result);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AgroAliment.Domain.Models;
+using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,10 +14,14 @@ public class UserService : IUserService
         _context = context;
     }
 
-    public async Task<List<Users>> GetAllUsers()
+    public async Task<IEnumerable<Users>> GetAllUsers()
     {
         return await _context.Users.ToListAsync();
     }
+
+    // public async Task<IEnumerable<Users>> ListAsync() =>
+    //     await _context.Users
+    //         .ToListAsync();
 
     public async Task<Users> GetUserById(int id)
     {
@@ -64,5 +69,24 @@ public class UserService : IUserService
     public async Task<IEnumerable<Users>> GetUserByName(string name)
     {
         return await _context.Users.Where(s => s.Nom.Contains(name)).ToListAsync();
+    }
+
+    public async Task<IEnumerable<Users>> FindName(string search)
+    {
+        if (System.Text.RegularExpressions.Regex.IsMatch(search, "^[0-9]+$"))
+        {
+            return null!;
+        }
+
+        var searchValue = search.ToLower();
+        var user = _context.Users.Where(x =>
+                x.Prenom.ToLower().StartsWith(searchValue) ||
+                x.Nom.ToLower().StartsWith(searchValue) ||
+                x.Email.ToLower().StartsWith(searchValue) ||
+                x.Service.Nom.ToLower().StartsWith(searchValue) ||
+                x.Site.Ville.ToLower().StartsWith(searchValue))
+            .ToListAsync();
+
+        return await user;
     }
 }

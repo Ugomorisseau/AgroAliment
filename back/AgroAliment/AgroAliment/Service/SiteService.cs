@@ -1,4 +1,5 @@
 ﻿using AgroAliment.Domain.Models;
+using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
 using Microsoft.EntityFrameworkCore;
 

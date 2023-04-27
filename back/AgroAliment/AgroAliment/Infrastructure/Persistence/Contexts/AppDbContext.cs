@@ -1,17 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AgroAliment.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace AgroAliment.Domain.Models
+namespace AgroAliment.Infrastructure.Persistence.Contexts
 {
-    public class AppDbContext : DbContext
+    public partial class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Site> Sites { get; set; }
-        public DbSet<Service> Services { get; set; }
-        public DbSet<Users> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Site> Sites { get; set; }
+        public virtual DbSet<Domain.Models.Service> Services { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
     }
 }

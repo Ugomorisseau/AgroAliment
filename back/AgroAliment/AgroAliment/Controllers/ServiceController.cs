@@ -1,4 +1,5 @@
 ﻿using AgroAliment.Domain.Models;
+using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,6 +27,13 @@ namespace AgroAliment.Controllers;
         public async Task<ActionResult<IEnumerable<Domain.Models.Service>>> GetServices()
         {
             var result = await _service.GetAllService();
+            return Ok(result);
+        }
+        
+        [HttpGet("search/{search}")]
+        public async Task<IActionResult> FindName(string search)
+        {
+            var result = await _service.FindService(search);
             return Ok(result);
         }
 }

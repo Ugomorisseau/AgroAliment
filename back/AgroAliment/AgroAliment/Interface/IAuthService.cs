@@ -7,4 +7,6 @@ public interface IAuthService
 {
     Task<Users> Login(string email, string password);
     string GenerateToken(string secure, List<Claim> claims);
+    Users Auth(string email, string password);
+
 }

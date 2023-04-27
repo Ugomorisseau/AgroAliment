@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using AgroAliment.Domain.Models;
+using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -50,6 +51,18 @@ public class AuthService: IAuthService
             return null;
         }
 
+        return user;
+    }
+    
+    public Users Auth(string email, string password)
+    {
+        var user = _context.Users
+            .Include(u => u.Role)
+            .FirstOrDefault(u => u.Email == email.ToLower());
+        
+        if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
+            return null;
+        
         return user;
     }
 }
