@@ -1,0 +1,77 @@
+<div class="back">
+  <div class="container">
+    <div class="div-title">
+      <span>
+        <p id="negosud-title">Ajouter un salarié</p>
+      </span>
+    </div>
+    <form [formGroup]="userFormGroup" (ngSubmit)="register()">
+
+      <div class="grid p-fluid div-form-login">
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input formControlName="prenom" type="text" pInputText placeholder="Prénom">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input formControlName="nom" type="text" pInputText placeholder="Nom">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+            <input formControlName="phone" type="tel" pInputText placeholder="Numéro de téléphone">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+            <input formControlName="phoneFix" type="tel" pInputText placeholder="Numéro de téléphone fix">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+            <input formControlName="email" type="email" pInputText placeholder="Email">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+            <input formControlName="password" type="password" pInputText placeholder="Mot de passe">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+        <p-dropdown [options]="sites" formControlName="siteId"
+                       optionLabel="ville" optionValue="id"></p-dropdown>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <p-dropdown [options]="services" formControlName="serviceId"
+                      optionLabel="nom" optionValue="id"></p-dropdown>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <p-dropdown [options]="roles" formControlName="roleId"
+                      optionLabel="nom" optionValue="id"></p-dropdown>
+        </div>
+
+        <span
+          style="display: flex; justify-content: center; align-items: center; font-size: 1rem; margin-top: 0.5em; color: #bf1d1d"
+          class="p-tag-danger" *ngIf="errorMessage">{{errorMessage}}</span>
+      </div>
+      <div class="div-button-submit">
+        <p-button class="submit-button" label="Ajouter" type="submit"></p-button>
+      </div>
+    </form>
+  </div>
+</div>

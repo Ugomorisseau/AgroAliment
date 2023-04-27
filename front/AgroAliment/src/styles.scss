@@ -1,16 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-  background-color: #1E1E1E;
+body {
+  background-color: #292929;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
-.btn-container{
+
+.btn-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.customise-btn{
+.customise-btn {
   padding: 1em;
   margin: 1em;
   background: #4B9CD3;
@@ -19,26 +23,26 @@ body{
 .p-datatable .p-datatable-thead > tr > th {
   text-align: center;
   padding: 1rem 1rem;
-  border: 1px solid #444444 ;
+  border: 1px solid #444444;
   border-width: 0 0 1px 0;
   font-weight: 700;
   color: #F5F5F5;
-  background: #1E1E1E;
+  background: #292929;
   transition: box-shadow 0.2s;
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
   text-align: center;
-  border: 1px solid #444444 ;
+  border: 1px solid #444444;
   border-width: 0 0 1px 0;
   padding: 1rem 1rem;
-  background: #1E1E1E;
+  background: #292929;
   color: #F5F5F5;
 }
 
-.p-datatable .p-datatable-tbody > tr > td:hover{
+.p-datatable .p-datatable-tbody > tr > td:hover {
   text-align: center;
-  border: 1px solid #444444 ;
+  border: 1px solid #444444;
   border-width: 0 0 1px 0;
   padding: 1rem 1rem;
   background: #292929;
@@ -46,7 +50,7 @@ body{
 }
 
 .p-paginator {
-  background: #1E1E1E;
+  background: #292929;
   color: #F5F5F5;
   border: solid #444444;
   border-width: 0;
@@ -59,4 +63,31 @@ body{
   border-color: #EFF6FF;
   color: #6666ff;
 }
+
+.navbar-container {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background: #323232;
+  padding-top: 2rem;
+  /* ajoutez d'autres styles selon vos besoins */
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
+.navbar{}
 

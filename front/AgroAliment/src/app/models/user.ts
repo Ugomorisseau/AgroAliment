@@ -9,7 +9,6 @@ export interface User {
   email?: string;
   phone?: string;
   phoneFix?: string;
-  isAdmin?: boolean;
   password?: string;
   serviceId?: number;
   siteId?: number;
@@ -17,6 +16,22 @@ export interface User {
   service?: Service;
   site?: Site;
   role?: Role;
-
 }
 
+export interface UserViewModel
+{
+  id?: number;
+  nom?: string;
+  prenom?: string;
+  email?: string;
+  phone?: string;
+  phoneFix?: string;
+  serviceId?: number;
+  siteId?: number;
+  roleId?: number;
+}
+
+export interface Data
+{
+  data?: string;
+}

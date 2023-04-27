@@ -13,13 +13,11 @@
 }
 
 .container {
-  height: 30em;
+  height: 40em;
   width: 30em;
   border: 1px solid #aaa;
   border-radius: 1em;
 }
-
-
 
 .div-title {
   width: 100%;
@@ -29,17 +27,16 @@
   flex-direction: column;
   padding: 2em;
 
-  p{
+  p {
     margin: 0;
   }
 }
 
-#negosud-title{
+#negosud-title {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: default;
   padding: 0.2em;
-  color: #58355E;
 }
 
 #title {
@@ -49,29 +46,29 @@
   margin-top: 1em;
 }
 
-.div-button-submit{
+.div-button-submit {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.submit-button{
+.submit-button {
   margin-top: 2em;
 }
 
-form{
+form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.div-form-login{
+.div-form-login {
   margin-top: 0.7em;
   width: 80%;
 }
 
-.input-login{
+.input-login {
   margin-top: 0.3em;
 }
 

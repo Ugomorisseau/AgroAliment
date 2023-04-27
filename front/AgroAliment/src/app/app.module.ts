@@ -11,6 +11,15 @@ import {TableModule} from "primeng/table";
 import {RippleModule} from "primeng/ripple";
 import {LoginComponent} from "./login/login.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NavbarComponent } from './navbar/navbar.component';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { UserDeleteComponent } from './user-delete/user-delete.component';
+import {AutoCompleteModule} from "primeng/autocomplete";
+import { NewUserComponent } from './new-user/new-user.component';
+import {InputTextModule} from "primeng/inputtext";
+import {MultiSelectModule} from "primeng/multiselect";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {DropdownModule} from "primeng/dropdown";
 
 
 
@@ -19,7 +28,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    UserDeleteComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +42,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     TableModule,
     RippleModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PanelMenuModule,
+    AutoCompleteModule,
+    InputTextModule,
+    MultiSelectModule,
+    BrowserAnimationsModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
