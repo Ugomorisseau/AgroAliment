@@ -41,19 +41,6 @@ public class UserController : ControllerBase
         return Ok(result);
     }
     
-    // [HttpGet("GetUsers")]
-    // public async Task<IActionResult> GetUsers()
-    // {
-    //     var result = await _userService.ListAsync();
-    //     
-    //     // var options = new JsonSerializerOptions
-    //     // {
-    //     //     ReferenceHandler = ReferenceHandler.Preserve
-    //     // };
-    //     // var json = JsonSerializer.Serialize(result, options);
-    //     
-    //     return Ok(result);
-    // }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Users>> GetUserById(int id)
