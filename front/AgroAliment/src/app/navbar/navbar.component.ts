@@ -30,7 +30,8 @@ export class NavbarComponent {
     },
     {
       label: 'Sites',
-      icon: 'pi pi-fw pi-user'
+      icon: 'pi pi-fw pi-user',
+      routerLink: '/site'
     }
   ];
 

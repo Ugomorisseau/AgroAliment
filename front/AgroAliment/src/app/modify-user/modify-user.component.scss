@@ -1,0 +1,65 @@
+
+.back {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+  user-select: none;
+  z-index: -1;
+}
+
+.container {
+  height: auto;
+  width: 30em;
+  border: 1px solid #aaa;
+  border-radius: 1em;
+}
+
+.div-title {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+
+  p {
+    margin: 0;
+  }
+}
+
+#negosud-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: default;
+}
+
+.div-button-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+  margin-top: 2em;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.div-form-login {
+  width: 80%;
+}
+
+.input-login {
+  margin-top: 0.3em;
+}

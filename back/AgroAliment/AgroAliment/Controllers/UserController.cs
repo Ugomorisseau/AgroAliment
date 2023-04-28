@@ -117,7 +117,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     public async Task<IActionResult> ModifyUser(int id, [FromBody] Users user)
     {
         if (user == null || id != user.Id)

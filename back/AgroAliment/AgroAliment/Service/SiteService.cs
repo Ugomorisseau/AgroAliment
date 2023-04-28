@@ -19,4 +19,18 @@ public class SiteService : ISiteService
         return await _context.Sites.ToListAsync();
     }
     
+    public async Task<IEnumerable<Site>> FindSite(string search)
+    {
+        if (System.Text.RegularExpressions.Regex.IsMatch(search, "^[0-9]+$"))
+        {
+            return null!;
+        }
+
+        var searchValue = search.ToLower();
+        var site = _context.Sites.Where(x =>
+                x.Ville.ToLower().StartsWith(searchValue))
+            .ToListAsync();
+
+        return await site;
+    }
 }

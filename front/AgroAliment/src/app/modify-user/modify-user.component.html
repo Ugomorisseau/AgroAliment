@@ -1,0 +1,86 @@
+<div class="navbar-container">
+  <app-navbar></app-navbar>
+</div>
+
+<div class="back">
+  <div class="container">
+    <div class="div-title">
+      <span>
+        <p id="negosud-title">Modifier le salarié {{user?.prenom}}</p>
+      </span>
+    </div>
+    <form [formGroup]="formGroup" (ngSubmit)="modifyUser()">
+
+      <div class="grid p-fluid div-form-login">
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input formControlName="prenom" type="text" pInputText ngDefaultControl value="{{user?.prenom}}">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input formControlName="nom" type="text" pInputText ngDefaultControl value="{{user?.nom}}">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+            <input formControlName="phone" type="tel" pInputText ngDefaultControl value="{{user?.phone}}">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+            <input formControlName="phoneFix" type="tel" pInputText ngDefaultControl value="{{user?.phoneFix}}">
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+            <input formControlName="email" type="email" pInputText ngDefaultControl value="{{user?.email}}">
+          </div>
+        </div>
+
+        <div style="margin-top: 1em" class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <label *ngIf="user?.siteId == 1">Site : Paris</label>
+            <label *ngIf="user?.siteId == 2">Site : Nantes</label>
+            <label *ngIf="user?.siteId == 3">Site : Toulouse</label>
+            <label *ngIf="user?.siteId == 4">Site : Nice</label>
+            <label *ngIf="user?.siteId == 5">Site : Lille</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 1em" class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <label *ngIf="user?.serviceId == 1">Service : Comptabilité</label>
+            <label *ngIf="user?.serviceId == 2">Service : Production</label>
+            <label *ngIf="user?.serviceId == 3">Service : Accueil</label>
+            <label *ngIf="user?.serviceId == 4">Service : Informatique</label>
+            <label *ngIf="user?.serviceId == 5">Service : Commercial</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 1em" class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <label *ngIf="user?.roleId == 1">Rôle : User</label>
+            <label *ngIf="user?.roleId == 2">Rôle : Admin</label>
+          </div>
+        </div>
+
+        <span
+          style="display: flex; justify-content: center; align-items: center; font-size: 1rem; margin-top: 0.5em; color: #bf1d1d"
+          class="p-tag-danger" *ngIf="errorMessage">{{errorMessage}}</span>
+      </div>
+      <div class="div-button-submit">
+        <p-button class="submit-button" label="Modifier" type="submit"></p-button>
+      </div>
+    </form>
+  </div>
+</div>

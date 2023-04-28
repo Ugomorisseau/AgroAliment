@@ -31,4 +31,11 @@ public class SiteController : ControllerBase
         var result = await _siteService.GetAllSite();
         return Ok(result);
     }
+    
+    [HttpGet("search/{search}")]
+    public async Task<IActionResult> FindName(string search)
+    {
+        var result = await _siteService.FindSite(search);
+        return Ok(result);
+    }
 }

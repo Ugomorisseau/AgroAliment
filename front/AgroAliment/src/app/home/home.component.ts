@@ -39,7 +39,7 @@ export class HomeComponent {
     console.log(this.userService.getData().then((users) => (this.users = users)));
   }
 
-  isAdmin(){
+  isAdmin() {
     return this.currentUser?.roleId == 2;
   }
 

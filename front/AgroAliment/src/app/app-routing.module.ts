@@ -6,6 +6,8 @@ import {UserDeleteComponent} from "./user-delete/user-delete.component";
 import {NewUserComponent} from "./new-user/new-user.component";
 import {ServicesService} from "./services/services.service";
 import {ServiceViewComponent} from "./service-view/service-view.component";
+import {ModifyUserComponent} from "./modify-user/modify-user.component";
+import {SiteViewComponent} from "./site-view/site-view.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent },
   {path: 'deletedUser', component: UserDeleteComponent},
   {path: 'addUser', component: NewUserComponent},
-  {path: 'service', component: ServiceViewComponent}
+  {path: 'service', component: ServiceViewComponent},
+  {path: 'editUser/:id', component: ModifyUserComponent},
+  {path: 'site', component: SiteViewComponent}
 ];
 
 @NgModule({

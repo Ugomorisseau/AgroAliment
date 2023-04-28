@@ -76,6 +76,22 @@ export class UserService {
     );
   }
 
+  getUserById(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.get(this.componentUrl + '/' + id, {headers});
+  }
+
+  modifyUser(user: User): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json', 'Authorization': this.getAuthorizationHeader()
+    });
+    return this.http.put(this.componentUrl + '/' + user.id, user, {headers});
+  }
+
+
+
 
 }
 
