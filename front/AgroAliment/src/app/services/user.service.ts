@@ -49,7 +49,10 @@ export class UserService {
 
   public addUser(nom: string, prenom: string, phone: string, phoneFix: string, email: string, password: string,
                  serviceId: number, siteId: number, roleId: number): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.getAuthorizationHeader()
+    });
     const registerData = {
       nom: nom,
       prenom: prenom,
@@ -89,8 +92,6 @@ export class UserService {
     });
     return this.http.put(this.componentUrl + '/' + user.id, user, {headers});
   }
-
-
 
 
 }

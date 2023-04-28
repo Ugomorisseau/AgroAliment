@@ -65,7 +65,8 @@ export class ModifyUserComponent {
       nom: this.formGroup.value.nom == '' ? this.user?.nom : this.formGroup.value.nom,
       email: this.formGroup.value.email == '' ? this.user?.email : this.formGroup.value.email,
       phoneFix: this.formGroup.value.phoneFix == '' ? this.user?.phoneFix : this.formGroup.value.phoneFix,
-      phone: this.formGroup.value.phone == '' ? this.user?.phone : this.formGroup.value.phone
+      phone: this.formGroup.value.phone == '' ? this.user?.phone : this.formGroup.value.phone,
+      password: this.formGroup.value.password == '' ? this.user?.password : this.formGroup.value.password
     }
 
     this.userService.modifyUser(user).subscribe(result => {
