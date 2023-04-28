@@ -1,6 +1,7 @@
 ﻿using AgroAliment.Domain.Models;
 using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgroAliment.Controllers;
@@ -37,5 +38,19 @@ public class SiteController : ControllerBase
     {
         var result = await _siteService.FindSite(search);
         return Ok(result);
+    }
+    
+    [HttpPost("AddSite")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult<Domain.Models.Service>> AddSite([FromBody] Site site)
+    {
+        if (site == null)
+        {
+            return BadRequest();
+        }
+
+        await _siteService.AddSite(site);
+
+        return CreatedAtAction(nameof(GetSites), new { id = site.Id }, site);
     }
 }

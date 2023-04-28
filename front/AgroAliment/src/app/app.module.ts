@@ -23,6 +23,8 @@ import {DropdownModule} from "primeng/dropdown";
 import {ServiceViewComponent} from './service-view/service-view.component';
 import {SiteViewComponent} from './site-view/site-view.component';
 import {ModifyUserComponent} from './modify-user/modify-user.component';
+import { NewServiceComponent } from './new-service/new-service.component';
+import { NewSiteComponent } from './new-site/new-site.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import {ModifyUserComponent} from './modify-user/modify-user.component';
     NewUserComponent,
     ServiceViewComponent,
     SiteViewComponent,
-    ModifyUserComponent
+    ModifyUserComponent,
+    NewServiceComponent,
+    NewSiteComponent
   ],
   imports: [
     BrowserModule,

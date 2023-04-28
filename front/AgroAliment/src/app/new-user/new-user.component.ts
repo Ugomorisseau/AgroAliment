@@ -43,6 +43,7 @@ export class NewUserComponent {
 
   ngOnInit() {
     this.services = [
+      { nom: 'Service', id: 0},
       { nom: 'Comptabilité', id: 1},
       { nom: 'Production', id: 2},
       { nom: 'Accueil', id: 3},
@@ -51,6 +52,7 @@ export class NewUserComponent {
     ];
 
     this.sites = [
+      { ville: 'Site', id: 0},
       { ville: 'Paris', id: 1},
       { ville: 'Nantes', id: 2},
       { ville: 'Toulouse', id: 3},
@@ -59,6 +61,7 @@ export class NewUserComponent {
     ];
 
     this.roles = [
+      { nom: 'Role', id: 0},
       { nom: 'User', id: 1},
       { nom: 'Admin', id: 2}
     ];

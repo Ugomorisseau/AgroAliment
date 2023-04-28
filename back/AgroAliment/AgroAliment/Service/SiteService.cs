@@ -33,4 +33,11 @@ public class SiteService : ISiteService
 
         return await site;
     }
+    
+    public async Task<Site> AddSite(Site sites)
+    {
+        _context.Sites.Add(sites);
+        await _context.SaveChangesAsync();
+        return sites;
+    }
 }

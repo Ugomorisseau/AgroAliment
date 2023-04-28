@@ -6,5 +6,7 @@ public interface ISiteService
 {
     Task<List<Site>> GetAllSite();
     Task<IEnumerable<Site>> FindSite(string search);
+    Task<Site> AddSite(Site sites);
+
 
 }

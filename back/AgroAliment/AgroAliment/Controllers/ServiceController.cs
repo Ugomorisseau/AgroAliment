@@ -1,6 +1,7 @@
 ﻿using AgroAliment.Domain.Models;
 using AgroAliment.Infrastructure.Persistence.Contexts;
 using AgroAliment.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgroAliment.Controllers;
@@ -35,5 +36,19 @@ namespace AgroAliment.Controllers;
         {
             var result = await _service.FindService(search);
             return Ok(result);
+        }
+        
+        [HttpPost("AddService")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<Domain.Models.Service>> AddService([FromBody] Domain.Models.Service service)
+        {
+            if (service == null)
+            {
+                return BadRequest();
+            }
+
+            await _service.AddService(service);
+
+            return CreatedAtAction(nameof(GetServices), new { id = service.Id }, service);
         }
 }

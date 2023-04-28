@@ -8,6 +8,8 @@ import {ServicesService} from "./services/services.service";
 import {ServiceViewComponent} from "./service-view/service-view.component";
 import {ModifyUserComponent} from "./modify-user/modify-user.component";
 import {SiteViewComponent} from "./site-view/site-view.component";
+import {NewServiceComponent} from "./new-service/new-service.component";
+import {NewSiteComponent} from "./new-site/new-site.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: 'addUser', component: NewUserComponent},
   {path: 'service', component: ServiceViewComponent},
   {path: 'editUser/:id', component: ModifyUserComponent},
-  {path: 'site', component: SiteViewComponent}
+  {path: 'site', component: SiteViewComponent},
+  {path: 'addService', component: NewServiceComponent},
+  {path: 'addSite', component: NewSiteComponent}
 ];
 
 @NgModule({

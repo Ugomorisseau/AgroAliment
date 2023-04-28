@@ -73,7 +73,7 @@ export class ModifyUserComponent {
       this.router.navigate(['/home']);
     }, error => {
       if (error.status == 401) {
-        error.statusText = "Impossible de vous enregistrer, veuillez recommencer";
+        error.statusText = "Impossible de modifier, veuillez recommencer";
       }
       this.errorMessage = error.statusText;
     });

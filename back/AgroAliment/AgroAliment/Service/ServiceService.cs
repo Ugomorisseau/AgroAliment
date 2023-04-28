@@ -34,4 +34,11 @@ public class ServiceService : IServiceService
         return await service;
     }
     
+    public async Task<Domain.Models.Service> AddService(Domain.Models.Service services)
+    {
+        _context.Services.Add(services);
+        await _context.SaveChangesAsync();
+        return services;
+    }
+    
 }

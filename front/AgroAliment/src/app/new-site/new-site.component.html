@@ -1,0 +1,29 @@
+<div class="navbar-container">
+  <app-navbar></app-navbar>
+</div>
+
+<div class="back">
+  <div class="container">
+    <div class="div-title">
+      <span>
+        <p id="negosud-title">Ajouter un site</p>
+      </span>
+    </div>
+    <form [formGroup]="userFormGroup" (ngSubmit)="register()">
+
+      <div class="grid p-fluid div-form-login">
+
+        <div class="col-12 md:col-4 input-login">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input formControlName="ville" type="text" pInputText placeholder="Ville">
+          </div>
+        </div>
+
+      </div>
+      <div class="div-button-submit">
+        <p-button class="submit-button" label="Ajouter" type="submit"></p-button>
+      </div>
+    </form>
+  </div>
+</div>

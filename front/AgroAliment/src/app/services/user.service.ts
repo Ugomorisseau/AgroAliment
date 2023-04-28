@@ -36,7 +36,7 @@ export class UserService {
     return this.http.delete(this.componentUrl + `/${userId}`, {headers});
   }
 
-  private getAuthorizationHeader() {
+  public getAuthorizationHeader() {
     const token = this.authService.GetToken();
     console.log(this.authService.GetToken());
     return token?.replace(/"/g, '') ? `Bearer ${token}` : '';
